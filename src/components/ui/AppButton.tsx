@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { cva, type VariantProps } from "class-variance-authority";
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
 interface Props {
   children: string | ReactNode;
   link?: string;

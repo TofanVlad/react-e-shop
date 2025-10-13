@@ -13,7 +13,7 @@ export default function AppBrowseSection() {
           </p>
           <div className="tablet:mx-0 mx-auto">
             <AppButton link="/catalog">
-              Start Browsing{" "}
+              Start Browsing
               <Icon icon="lucide:arrow-right" className="shrink-0 size-5" />
             </AppButton>
           </div>

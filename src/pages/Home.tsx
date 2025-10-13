@@ -5,7 +5,7 @@ import AppBrowseSection from "@/components/home/sections/AppBrowseSection";
 import AppNewsletterSection from "@/components/home/sections/AppNewsletterSection";
 import Default from "../layouts/Default";
 
-function Home() {
+export default function Home() {
   return (
     <Default>
       <AppHeroSection />
@@ -17,5 +17,3 @@ function Home() {
     </Default>
   );
 }
-
-export default Home;

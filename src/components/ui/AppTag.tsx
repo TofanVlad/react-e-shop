@@ -27,11 +27,11 @@ const tagVariants = cva(
   }
 );
 
-export default function AppTag({ title, variant, onClick }: Props) {
+export default function AppTag({ title, variant, size, onClick }: Props) {
   return (
     <span
-      className={tagVariants({ variant })}
-      onClick={() => (onClick ? onClick() : () => {})}
+      className={tagVariants({ variant, size })}
+      onClick={() => onClick?.()}
     >
       {title}
     </span>
