@@ -15,3 +15,30 @@ export const homeFeatures = Object.freeze([
         text: 'Your security is our priority. Your payments are secure with us.',
     },
 ])
+
+export const footerLinks = [
+    {
+        title: "SUPPORT",
+        items: [
+            { text: "FAQ" },
+            { text: "Terms of use" },
+            { text: "Privacy Policy" },
+        ],
+    },
+    {
+        title: "COMPANY",
+        items: [
+            { text: "About us", link: "/about" },
+            { text: "Contact", link: "/contact" },
+            { text: "Careers", link: "/about" },
+        ],
+    },
+    {
+        title: "SHOP",
+        items: [
+            { text: "My Account", link: "/profile" },
+            { text: "Checkout", link: "/cart" },
+            { text: "Cart", link: "/cart" },
+        ],
+    },
+];

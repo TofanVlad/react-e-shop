@@ -1,13 +1,20 @@
+import AppTag from "../ui/AppTag";
+import { Link } from "react-router";
+
 interface Props {
   image?: string;
   title: string;
-  price: string;
+  price: number;
   stock?: boolean;
   slug: string;
 }
 
-import AppTag from "../ui/AppTag";
-import { Link } from "react-router";
+function formatPrice(price: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(price);
+}
 
 export default function AppProductCard({
   image = "https://placehold.co/600x400",
@@ -29,8 +36,8 @@ export default function AppProductCard({
       <div className="flex flex-col gap-3">
         <p className="text-neutral-900 font-medium text-sm">{props.title}</p>
         <div className="flex items-center gap-4">
-          {stock && <AppTag title="IN STOCK" />}
-          <span className="text-neutral-600">{props.price}</span>
+          {stock && <AppTag size="sm" title="IN STOCK" />}
+          <span className="text-neutral-600">{formatPrice(props.price)}</span>
         </div>
       </div>
     </Link>

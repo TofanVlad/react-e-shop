@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import AppNavbar from "@/components/common/AppNavbar";
+import AppFooter from "@/components/common/AppFooter";
 
 interface Props {
   children: ReactNode;
@@ -14,6 +15,7 @@ export default function Default({ children }: Props) {
       </div>
       <AppNavbar />
       {children}
+      <AppFooter />
     </>
   );
 }
