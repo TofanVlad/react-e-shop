@@ -72,3 +72,15 @@ export const products = Object.freeze([
         slug: "test4",
     },
 ]);
+
+import Browse from '@assets/Browse.webp'
+
+export const mockProductData = Object.freeze({
+    image: Browse,
+    title: 'Raw Black T-Shirt Lineup',
+    price: 75,
+    size: 'S',
+    quantity: 1,
+    maxQuantity: 5,
+
+})

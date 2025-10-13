@@ -5,6 +5,7 @@ import About from './pages/About'
 import Cart from './pages/Cart'
 import Contact from './pages/Contact'
 import Profile from './pages/Profile'
+import Product from './pages/Product'
 
 const router = createBrowserRouter([
     { path: '/', Component: Home },
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     { path: '/cart', Component: Cart },
     { path: '/contact', Component: Contact },
     { path: '/profile', Component: Profile },
+    { path: '/product/:slug', Component: Product },
 ])
 
 export default router
