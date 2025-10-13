@@ -1,3 +1,10 @@
+export const navLinks = Object.freeze([
+    { title: 'Home', link: '/' },
+    { title: 'Catalog', link: '/catalog' },
+    { title: 'About', link: '/about' },
+    { title: 'Contact', link: '/contact' },
+])
+
 export const homeFeatures = Object.freeze([
     {
         icon: 'lucide:truck',

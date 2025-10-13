@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 export default function AppHero() {
   return (
     <>
-      <section className="laptop:w-screen bg-white-100 pt-10 laptop:pb-0 pb-10">
+      <section className="tablet:w-screen bg-white-100 pt-10 tablet:pb-0 pb-10">
         <div className="container flex items-center tablet:justify-between justify-center">
           <div className="flex flex-col tablet:gap-3 gap-2">
             <h1 className="font-semibold text-3xl text-neutral-800">

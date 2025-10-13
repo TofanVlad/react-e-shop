@@ -45,14 +45,18 @@ export default function AppButton({
         <Link
           to={link}
           {...props}
-          className={[buttonVariants({ variant }), props.className].join(" ")}
+          className={[buttonVariants({ variant, size }), props.className].join(
+            " "
+          )}
         >
           {children}
         </Link>
       ) : (
         <button
           {...props}
-          className={[buttonVariants({ size }), props.className].join(" ")}
+          className={[buttonVariants({ variant, size }), props.className].join(
+            " "
+          )}
         >
           {children}
         </button>

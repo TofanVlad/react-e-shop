@@ -1,31 +1,28 @@
-import Logo from "../../assets/Logo.webp";
+import Logo from "@assets/Logo.webp";
 import { Link } from "react-router";
 import AppInput from "../ui/input/AppInput";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import AppButton from "../ui/AppButton";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "@/store/menu.slice";
+import { navLinks } from "@/constants";
 
 export default function AppNavbar() {
   const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
 
   return (
-    <nav className="flex items-center container justify-between laptop:py-5 py-3 mx-auto">
-      <Link to={"/"} className="laptop:h-10 h-8">
+    <nav className="flex items-center container justify-between tablet:py-5 py-3 mx-auto">
+      <Link to={"/"} className="tablet:h-10 h-8">
         <img src={Logo} className="w-full h-full object-cover cursor-pointer" />
       </Link>
       <ul className="desktop:flex hidden items-center gap-8 text-neutral-500 font-medium">
-        <Link to={"/"} className="cursor-pointer">
-          Home
-        </Link>
-        <Link to={"/catalog"} className="cursor-pointer">
-          Catalog
-        </Link>
-        <Link to={"/about"} className="cursor-pointer">
-          About
-        </Link>
-        <Link to={"/contact"} className="cursor-pointer">
-          Contact
-        </Link>
+        {navLinks.map((item) => (
+          <Link to={item.link} key={item.link} className="cursor-pointer">
+            {item.title}
+          </Link>
+        ))}
       </ul>
 
       <div className="tablet:flex hidden desktop:mx-0 mx-auto items-center gap-8">
@@ -43,7 +40,7 @@ export default function AppNavbar() {
         </Link>
       </div>
       <div className="desktop:hidden block">
-        <AppButton size="sm">
+        <AppButton size="sm" onClick={() => dispatch(toggleMenu())}>
           Menu <Icon icon="lucide:align-justify" className="size-5" />
         </AppButton>
       </div>
