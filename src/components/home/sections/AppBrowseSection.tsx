@@ -3,20 +3,22 @@ import AppButton from "@/components/ui/AppButton";
 import { Icon } from "@iconify/react";
 export default function AppBrowseSection() {
   return (
-    <section className="w-screen bg-white-100 my-48">
-      <div className="container flex items-center justify-between">
-        <div className="flex flex-col gap-6 max-w-md">
+    <section className="w-screen bg-white-100 tablet:my-48 my-24">
+      <div className="container flex items-center justify-between tablet:py-0 py-8">
+        <div className="flex flex-col gap-6 max-w-md tablet:text-start text-center">
           <h3 className="text-2xl font-bold">Browse Our Fashion Paradise!</h3>
-          <p className="text-neutral-500 mb-4">
+          <p className="text-neutral-500 tablet:mb-4">
             Step into a world of style and explore our diverse collection of
             clothing categories.
           </p>
-          <AppButton link="/catalog">
-            Start Browsing{" "}
-            <Icon icon="lucide:arrow-right" className="shrink-0 size-5" />
-          </AppButton>
+          <div className="tablet:mx-0 mx-auto">
+            <AppButton link="/catalog">
+              Start Browsing{" "}
+              <Icon icon="lucide:arrow-right" className="shrink-0 size-5" />
+            </AppButton>
+          </div>
         </div>
-        <div className="max-w-3xs aspect-3/4">
+        <div className="max-w-3xs aspect-3/4 tablet:block hidden">
           <img
             src={Browse}
             alt="Browse"

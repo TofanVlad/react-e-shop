@@ -18,8 +18,8 @@ body{
 @theme{
 
     --breakpoint-*: initial;
-    --breakpoint-tablet: 25rem;
-    --breakpoint-laptop: 50rem;
+    --breakpoint-mobile: 25rem;
+    --breakpoint-tablet: 50rem;
     --breakpoint-desktop: 75rem;
 
     --color-primary-100: #F0F1FF;

@@ -12,6 +12,7 @@ interface Props {
   size?: VariantProps<typeof inputVariants>["size"];
   error?: boolean;
   prependIcon?: string;
+  className?: string;
 }
 
 const inputVariants = cva(
@@ -38,7 +39,10 @@ export default function AppInput({ type = "text", variant, ...props }: Props) {
   const componentId = useId();
   return (
     <>
-      <label className="flex flex-col" htmlFor={componentId}>
+      <label
+        className={["flex flex-col", props.className].join(" ")}
+        htmlFor={componentId}
+      >
         <span className="text-sm font-medium text-neutral-600">
           {props.label}
         </span>
@@ -50,7 +54,7 @@ export default function AppInput({ type = "text", variant, ...props }: Props) {
             />
           )}
           <input
-            className="outline-none"
+            className="outline-none w-full"
             type={type}
             id={componentId}
             placeholder={props.placeholder}

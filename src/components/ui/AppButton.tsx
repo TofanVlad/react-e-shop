@@ -5,12 +5,13 @@ interface Props {
   children: string | ReactNode;
   link?: string;
   variant?: VariantProps<typeof buttonVariants>["variant"];
-  size?: VariantProps<typeof buttonVariants>["variant"];
+  size?: VariantProps<typeof buttonVariants>["size"];
   onClick?: (e?: unknown) => void;
+  className?: string;
 }
 
 const buttonVariants = cva(
-  "rounded-xl text-sm font-medium transition-colors duration-300 cursor-pointer flex items-center gap-2 w-max",
+  "rounded-lg text-sm font-medium transition-colors duration-300 cursor-pointer flex items-center gap-2 w-max",
   {
     variants: {
       variant: {
@@ -21,7 +22,7 @@ const buttonVariants = cva(
       },
       size: {
         lg: "px-6 py-3",
-        sm: "px-5 py-3",
+        sm: "px-4 py-2",
       },
     },
     defaultVariants: {
@@ -35,16 +36,24 @@ export default function AppButton({
   children,
   link,
   variant,
+  size,
   ...props
 }: Props) {
   return (
     <>
       {link ? (
-        <Link to={link} {...props} className={buttonVariants({ variant })}>
+        <Link
+          to={link}
+          {...props}
+          className={[buttonVariants({ variant }), props.className].join(" ")}
+        >
           {children}
         </Link>
       ) : (
-        <button {...props} className={buttonVariants({ variant })}>
+        <button
+          {...props}
+          className={[buttonVariants({ size }), props.className].join(" ")}
+        >
           {children}
         </button>
       )}

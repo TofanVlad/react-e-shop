@@ -42,3 +42,26 @@ export const footerLinks = [
         ],
     },
 ];
+
+export const products = Object.freeze([
+    {
+        title: "Test product",
+        price: 24,
+        slug: "test1",
+    },
+    {
+        title: "Test product",
+        price: 24,
+        slug: "test2",
+    },
+    {
+        title: "Test product",
+        price: 24,
+        slug: "test3",
+    },
+    {
+        title: "Test product",
+        price: 24,
+        slug: "test4",
+    },
+]);
