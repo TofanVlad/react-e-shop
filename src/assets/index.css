@@ -12,6 +12,7 @@ body{
     display: flex;
     flex-direction: column;
     font-size: 14px;
+    overflow-x: hidden;
 }
 
 @theme{
@@ -84,4 +85,25 @@ body{
     --color-yellow-700: #F9C14C;
     --color-yellow-800: #F6BB33;
     --color-yellow-900: #F3B40A;
+}
+
+.container{
+    padding-inline: 16px;
+    margin-inline: auto;
+}
+
+.loader-animation{
+    animation: loader 1.5s infinite linear
+}
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg) scale(1)
+    }
+    50%{
+        transform: rotate(180deg) scale(1.15)
+    }
+    100%{
+        transform: rotate(360deg) scale(1)
+    }
 }

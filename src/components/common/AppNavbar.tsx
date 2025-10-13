@@ -1,41 +1,45 @@
 import Logo from "../../assets/Logo.webp";
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 import AppInput from "../ui/input/AppInput";
-import IconCart from "../ui/icons/IconCart";
-import IconProfile from "../ui/icons/IconProfile";
 import { useState } from "react";
+import { Icon } from "@iconify/react";
 
 export default function AppNavbar() {
   const [search, setSearch] = useState("");
 
   return (
-    <nav className="flex items-center container justify-between">
-      <div className="h-10">
-        <img src={Logo} className="w-full h-full object-cover" />
-      </div>
+    <nav className="flex items-center container justify-between py-5 mx-auto">
+      <Link to={"/"} className="h-10">
+        <img src={Logo} className="w-full h-full object-cover cursor-pointer" />
+      </Link>
       <ul className="flex items-center gap-8 text-neutral-500 font-medium">
-        <NavLink to={"/"} className="cursor-pointer">
+        <Link to={"/"} className="cursor-pointer">
           Home
-        </NavLink>
-        <NavLink to={"/catalog"} className="cursor-pointer">
+        </Link>
+        <Link to={"/catalog"} className="cursor-pointer">
           Catalog
-        </NavLink>
-        <NavLink to={"/about"} className="cursor-pointer">
+        </Link>
+        <Link to={"/about"} className="cursor-pointer">
           About
-        </NavLink>
-        <NavLink to={"/contact"} className="cursor-pointer">
+        </Link>
+        <Link to={"/contact"} className="cursor-pointer">
           Contact
-        </NavLink>
+        </Link>
       </ul>
 
       <div className="flex items-center gap-8">
-        <AppInput value={search} setValue={setSearch} />
-        <NavLink to={"/cart"}>
-          <IconCart />
-        </NavLink>
-        <NavLink to={"/profile"}>
-          <IconProfile />
-        </NavLink>
+        <AppInput
+          prependIcon="lucide:search"
+          placeholder="Search products"
+          value={search}
+          setValue={setSearch}
+        />
+        <Link to={"/cart"}>
+          <Icon icon="lucide:shopping-cart" className="size-5" />
+        </Link>
+        <Link to={"/profile"}>
+          <Icon icon="lucide:circle-user-round" className="size-5" />
+        </Link>
       </div>
     </nav>
   );

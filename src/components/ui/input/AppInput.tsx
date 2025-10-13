@@ -1,5 +1,6 @@
 import { useId } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Icon } from "@iconify/react";
 
 interface Props {
   value: string;
@@ -10,10 +11,11 @@ interface Props {
   variant?: VariantProps<typeof inputVariants>["variant"];
   size?: VariantProps<typeof inputVariants>["size"];
   error?: boolean;
+  prependIcon?: string;
 }
 
 const inputVariants = cva(
-  "outline px-4 placeholder:text-neutral-300 placeholder:text-medium transition-colors duration-300 rounded-md",
+  "outline px-4 placeholder:text-neutral-300 placeholder:text-medium transition-colors duration-300 rounded-md flex items-center gap-2",
   {
     variants: {
       variant: {
@@ -40,14 +42,22 @@ export default function AppInput({ type = "text", variant, ...props }: Props) {
         <span className="text-sm font-medium text-neutral-600">
           {props.label}
         </span>
-        <input
-          className={inputVariants({ variant })}
-          type={type}
-          id={componentId}
-          placeholder={props.placeholder}
-          value={props.value}
-          onChange={(e) => props.setValue(e.target.value)}
-        />
+        <div className={inputVariants({ variant })}>
+          {props.prependIcon && (
+            <Icon
+              icon={props.prependIcon}
+              className="size-6 text-neutral-300"
+            />
+          )}
+          <input
+            className="outline-none"
+            type={type}
+            id={componentId}
+            placeholder={props.placeholder}
+            value={props.value}
+            onChange={(e) => props.setValue(e.target.value)}
+          />
+        </div>
       </label>
     </>
   );

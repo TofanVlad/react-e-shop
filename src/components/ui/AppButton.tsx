@@ -1,7 +1,8 @@
 import { Link } from "react-router";
 import { cva, type VariantProps } from "class-variance-authority";
+import type { ReactNode } from "react";
 interface Props {
-  children: string;
+  children: string | ReactNode;
   link?: string;
   variant?: VariantProps<typeof buttonVariants>["variant"];
   size?: VariantProps<typeof buttonVariants>["variant"];
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const buttonVariants = cva(
-  "rounded-xl text-sm font-medium transition-colors duration-300 cursor-pointer",
+  "rounded-xl text-sm font-medium transition-colors duration-300 cursor-pointer flex items-center gap-2 w-max",
   {
     variants: {
       variant: {

@@ -1,20 +1,15 @@
-import { Link } from "react-router";
-import AppButton from "../components/ui/AppButton";
-import AppInput from "../components/ui/input/AppInput";
-import AppTextarea from "../components/ui/input/AppTextarea";
-import { useState } from "react";
-function Home() {
-  const [input, setInput] = useState("");
-  const [textarea, setTextarea] = useState("");
+import AppHero from "@/components/home/sections/AppHero";
+import AppFeatureSection from "@/components/home/sections/AppFeatureSection";
+import AppProductsSection from "@/components/home/sections/AppProductsSection";
+import Default from "../layouts/Default";
 
+function Home() {
   return (
-    <>
-      <div className="">Home!</div>
-      <AppButton>button1</AppButton>
-      <AppInput label="Label" value={input} setValue={setInput} />
-      <AppTextarea label="Label" value={textarea} setValue={setTextarea} />
-      <Link to={"/catalog"}>Go Catalog</Link>
-    </>
+    <Default>
+      <AppHero />
+      <AppFeatureSection />
+      <AppProductsSection />
+    </Default>
   );
 }
 
