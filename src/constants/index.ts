@@ -80,5 +80,7 @@ export const mockProductData = Object.freeze({
     title: 'Raw Black T-Shirt Lineup',
     price: 75,
     size: 'S',
-    reviews: 52
+    reviews: 52,
+    description: `Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.
+The classic black color never goes out of style. Whether you're dressing up for a special occasion or keeping it casual, these black t-shirts are the perfect choice, effortlessly complementing any outfit.`,
 })

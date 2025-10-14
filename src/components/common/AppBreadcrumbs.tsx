@@ -13,7 +13,10 @@ export default function AppBreadcrumbs(props: Props) {
         Ecommerce
       </Link>
       <Icon icon="lucide:chevron-right" className="text-neutral-400 size-6" />
-      <Link to={props.link} className="font-medium text-neutral-900">
+      <Link
+        to={props.link}
+        className="font-medium text-neutral-900 text-ellipsis overflow-hidden whitespace-nowrap"
+      >
         {props.text}
       </Link>
     </div>

@@ -23,8 +23,13 @@ export default function AppProductInfo(props: Props) {
   return (
     <section className="flex flex-col">
       <div className="flex items-center justify-between mb-3">
-        <h1 className="text-neutral-900 font-bold text-2xl">{props.title}</h1>
-        <Icon icon="lucide:share-2" className="size-6 text-neutral-500" />
+        <h1 className="text-neutral-900 font-bold text-2xl text-ellipsis whitespace-nowrap overflow-hidden">
+          {props.title}
+        </h1>
+        <Icon
+          icon="lucide:share-2"
+          className="size-6 text-neutral-500 shrink-0"
+        />
       </div>
       <div className="flex items-center gap-2 mb-6">
         <p className="flex items-center gap-2 px-4 py-1 bg-white-100 text-neutral-500 rounded-full">

@@ -17,7 +17,7 @@ export default function AppMenu() {
           onClick={() => dispatch(toggleMenu())}
         >
           <div
-            className="h-screen tablet:w-1/3 mobile:w-1/2 w-full bg-white-100 ml-auto flex flex-col px-8 py-4"
+            className="h-screen desktop:w-1/3 tablet:w-1/2 w-full bg-white-100 ml-auto flex flex-col px-8 py-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">
