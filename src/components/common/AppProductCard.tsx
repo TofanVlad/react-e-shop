@@ -1,19 +1,12 @@
 import AppTag from "../ui/AppTag";
 import { Link } from "react-router";
-
+import { formatPrice } from "@utils/formatPrice";
 interface Props {
   image?: string;
   title: string;
   price: number;
   stock?: boolean;
   slug: string;
-}
-
-function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  }).format(price);
 }
 
 export default function AppProductCard({

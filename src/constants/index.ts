@@ -80,7 +80,5 @@ export const mockProductData = Object.freeze({
     title: 'Raw Black T-Shirt Lineup',
     price: 75,
     size: 'S',
-    quantity: 1,
-    maxQuantity: 5,
-
+    reviews: 52
 })

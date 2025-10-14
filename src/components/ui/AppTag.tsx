@@ -8,7 +8,7 @@ interface Props {
 }
 
 const tagVariants = cva(
-  "px-4 py-0.5 font-medium text-xs rounded-full cursor-pointer",
+  "px-4 py-1 font-medium text-xs rounded-full cursor-pointer",
   {
     variants: {
       variant: {
