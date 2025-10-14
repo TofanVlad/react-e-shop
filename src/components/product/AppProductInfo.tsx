@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import AppTag from "../ui/AppTag";
 import { formatPrice } from "@/utils/formatPrice";
 import AppButton from "../ui/AppButton";
+import { availableSizes, availableColors } from "@/constants";
 
 interface Props {
   title: string;
@@ -13,12 +14,9 @@ interface Props {
   isLiked?: boolean;
 }
 
-const productSizes = ["S", "M", "L", "XL", "XXL"];
-const productColors = ["#A3BEF8", "#FFD58A", "#83B18B"];
-
 export default function AppProductInfo(props: Props) {
-  const [sizeSelect, setSizeSelect] = useState(productSizes[0]);
-  const [colorSelect, setColorSelect] = useState(productColors[0]);
+  const [sizeSelect, setSizeSelect] = useState(availableSizes[0]);
+  const [colorSelect, setColorSelect] = useState(availableColors[0]);
 
   return (
     <section className="flex flex-col">
@@ -48,7 +46,7 @@ export default function AppProductInfo(props: Props) {
           SELECT COLOR
         </h3>
         <div className="flex items-center gap-4 ml-1 ">
-          {productColors.map((item) => (
+          {availableColors.map((item) => (
             <AppProductColor
               key={item}
               value={colorSelect}
@@ -63,7 +61,7 @@ export default function AppProductInfo(props: Props) {
           SELECT SIZE
         </h3>
         <div className="flex items-center gap-2">
-          {productSizes.map((item) => (
+          {availableSizes.map((item) => (
             <AppProductSize
               key={item}
               value={sizeSelect}

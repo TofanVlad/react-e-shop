@@ -75,6 +75,9 @@ export const products = Object.freeze([
 
 import Browse from '@assets/Browse.webp'
 
+export const availableSizes = ["S", "M", "L", "XL", "XXL"];
+export const availableColors = ["#A3BEF8", "#FFD58A", "#83B18B"];
+
 export const mockProductData = Object.freeze({
     image: Browse,
     title: 'Raw Black T-Shirt Lineup',
