@@ -17,4 +17,5 @@ const router = createBrowserRouter([
     { path: '/product/:slug', Component: Product },
 ])
 
+router.subscribe(() => { window.scrollTo({ top: 0, behavior: 'auto' }) })
 export default router

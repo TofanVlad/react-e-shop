@@ -17,6 +17,7 @@ export default function AppFilters() {
           {availableColors.map((item) => (
             <AppProductColor
               color={item}
+              key={item}
               value={selectedColor}
               setValue={setSelectedColor}
             />
@@ -30,6 +31,7 @@ export default function AppFilters() {
           {availableSizes.map((item) => (
             <AppProductSelector
               title={item}
+              key={item}
               value={selectedSize}
               setValue={setSelectedSize}
             />
