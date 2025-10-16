@@ -1,15 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+
+type MenuValues = 'burger' | 'filter' | ''
 
 export const menuSlice = createSlice({
     name: 'menu',
     initialState: {
-        value: false
+        value: '' as MenuValues
     },
     reducers: {
-        toggleMenu: state => { state.value = !state.value }
+        openModal: (state, modal: PayloadAction<MenuValues>) => { state.value = modal.payload; },
+        closeModal: (state) => { state.value = ''; }
     }
 })
 
-export const { toggleMenu } = menuSlice.actions
+export const { openModal, closeModal } = menuSlice.actions
 
 export default menuSlice.reducer

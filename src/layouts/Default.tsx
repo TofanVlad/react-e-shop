@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import AppNavbar from "@/components/common/AppNavbar";
 import AppFooter from "@/components/common/AppFooter";
-import AppMenu from "@/components/common/AppMenu";
+import AppMenu from "@/components/modals/AppMenu";
 import { useSelector } from "react-redux";
 
 interface Props {

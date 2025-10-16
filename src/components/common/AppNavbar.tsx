@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import AppButton from "../ui/AppButton";
 import { useDispatch } from "react-redux";
-import { toggleMenu } from "@/store/menu.slice";
+import { openModal } from "@/store/menu.slice";
 import { navLinks } from "@/constants";
 
 export default function AppNavbar() {
@@ -40,7 +40,7 @@ export default function AppNavbar() {
         </Link>
       </div>
       <div className="desktop:hidden block">
-        <AppButton size="sm" onClick={() => dispatch(toggleMenu())}>
+        <AppButton size="sm" onClick={() => dispatch(openModal("burger"))}>
           Menu <Icon icon="lucide:align-justify" className="size-5" />
         </AppButton>
       </div>

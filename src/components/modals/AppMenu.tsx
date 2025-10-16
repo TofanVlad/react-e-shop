@@ -1,4 +1,4 @@
-import { toggleMenu } from "@/store/menu.slice";
+import { closeModal } from "@/store/menu.slice";
 import { useSelector, useDispatch } from "react-redux";
 import AppButton from "../ui/AppButton";
 import { Icon } from "@iconify/react";
@@ -11,10 +11,10 @@ export default function AppMenu() {
 
   return (
     <>
-      {state === true && (
+      {state === "burger" && (
         <div
           className="fixed inset-0 bg-neutral-900/50"
-          onClick={() => dispatch(toggleMenu())}
+          onClick={() => dispatch(closeModal())}
         >
           <div
             className="h-screen desktop:w-1/3 tablet:w-1/2 w-full bg-white-100 ml-auto flex flex-col px-8 py-4"
@@ -22,7 +22,7 @@ export default function AppMenu() {
           >
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold tracking-wide">MENU</h1>
-              <AppButton size="sm" onClick={() => dispatch(toggleMenu())}>
+              <AppButton size="sm" onClick={() => dispatch(closeModal())}>
                 <Icon
                   icon="material-symbols:close-rounded"
                   className="size-6"
@@ -36,7 +36,7 @@ export default function AppMenu() {
                   to={item.link}
                   key={item.link}
                   className="text-end text-3xl font-semibold pb-4"
-                  onClick={() => dispatch(toggleMenu())}
+                  onClick={() => dispatch(closeModal())}
                 >
                   {item.title}
                 </Link>

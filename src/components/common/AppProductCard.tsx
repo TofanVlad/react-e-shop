@@ -17,7 +17,7 @@ export default function AppProductCard({
   return (
     <Link
       to={`/product/${props.slug}`}
-      className="px-2 py-4 flex flex-col gap-6 cursor-pointer"
+      className="flex flex-col gap-3 cursor-pointer"
     >
       <div className="aspect-3/4">
         <img
@@ -26,12 +26,10 @@ export default function AppProductCard({
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="flex flex-col gap-3">
-        <p className="text-neutral-900 font-medium text-sm">{props.title}</p>
-        <div className="flex items-center gap-4">
-          {stock && <AppTag size="sm" title="IN STOCK" />}
-          <span className="text-neutral-600">{formatPrice(props.price)}</span>
-        </div>
+      <p className="text-neutral-900 font-medium text-sm">{props.title}</p>
+      <div className="flex items-center gap-4">
+        {stock && <AppTag size="sm" title="IN STOCK" />}
+        <span className="text-neutral-600">{formatPrice(props.price)}</span>
       </div>
     </Link>
   );

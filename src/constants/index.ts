@@ -77,6 +77,11 @@ import Browse from '@assets/Browse.webp'
 
 export const availableSizes = ["S", "M", "L", "XL", "XXL"];
 export const availableColors = ["#A3BEF8", "#FFD58A", "#83B18B"];
+export const availableSorts= [
+    { value: "none", text: "Don't sort" },
+    { value: "price", text: "By Price" },
+    { value: "name", text: "By Name" },
+];
 
 export const mockProductData = Object.freeze({
     image: Browse,

@@ -4,13 +4,13 @@ import { cva, type VariantProps } from "class-variance-authority";
 interface Props {
   text?: number | string;
   icon?: string;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   active?: boolean;
 }
 
 const paginationVariants = cva(
-  "w-10 h-8 flex items-center justify-center group rounded-sm cursor-pointer transition-all duration-300",
+  "mobile:w-10 w-8 h-8 flex items-center justify-center group rounded-sm cursor-pointer transition-all duration-300",
   {
     variants: {
       variant: {
