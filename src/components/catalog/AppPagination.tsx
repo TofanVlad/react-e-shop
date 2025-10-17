@@ -15,9 +15,6 @@ export default function AppPagination({ current, total, setCurrent }: Props) {
     if (current > 1) {
       return total.slice(current - 2, current + 1);
     }
-    if (current === total.length) {
-      return total.slice(current - 3, current + 1);
-    }
     return total.slice(current - 1, current + 2);
   }, [current]);
 
@@ -33,10 +30,6 @@ export default function AppPagination({ current, total, setCurrent }: Props) {
     setCurrent(current - 1);
   }
 
-  function setPage(page: number) {
-    setCurrent(page);
-  }
-
   return (
     <div className="flex items-center gap-2 px-2 py-1.5 outline outline-white-200 rounded-sm w-max mx-auto desktop:mt-16 tablet:mt-8 mt-6">
       <AppPaginationCell
@@ -49,7 +42,7 @@ export default function AppPagination({ current, total, setCurrent }: Props) {
           <AppPaginationCell
             text={item}
             key={item}
-            onClick={() => setPage(item)}
+            onClick={() => setCurrent(item)}
             active={current === item}
           />
         ))
@@ -57,8 +50,8 @@ export default function AppPagination({ current, total, setCurrent }: Props) {
         <>
           {current > 3 && (
             <>
-              <AppPaginationCell text={1} onClick={() => setPage(1)} />
-              <AppPaginationCell text={2} onClick={() => setPage(2)} />
+              <AppPaginationCell text={1} onClick={() => setCurrent(1)} />
+              <AppPaginationCell text={2} onClick={() => setCurrent(2)} />
               <AppPaginationCell text="..." disabled={true} />
             </>
           )}
@@ -66,20 +59,21 @@ export default function AppPagination({ current, total, setCurrent }: Props) {
             <AppPaginationCell
               text={item}
               key={item}
-              onClick={() => setPage(item)}
+              onClick={() => setCurrent(item)}
               active={current === item}
             />
           ))}
           {current + 3 < total.length && (
             <>
               <AppPaginationCell text="..." disabled={true} />
-              {total.slice(total.length - 2, total.length).map((item) => (
-                <AppPaginationCell
-                  text={item}
-                  onClick={() => setPage(item)}
-                  key={item}
-                />
-              ))}
+              <AppPaginationCell
+                text={total.length - 1}
+                onClick={() => setCurrent(total.length - 1)}
+              />
+              <AppPaginationCell
+                text={total.length}
+                onClick={() => setCurrent(total.length)}
+              />
             </>
           )}
         </>

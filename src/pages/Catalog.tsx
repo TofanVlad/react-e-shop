@@ -4,7 +4,7 @@ import AppFilters from "@/components/catalog/AppFilters";
 import AppProductCard from "@/components/common/AppProductCard";
 import AppPagination from "@/components/catalog/AppPagination";
 import { products } from "@/constants";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import AppButton from "@/components/ui/AppButton";
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
@@ -16,10 +16,9 @@ export default function Catalog() {
   const [current, setCurrent] = useState(1);
   const dispatch = useDispatch();
 
-  const totalPages = [];
-  for (let i = 0; i < pages; i++) {
-    totalPages.push(i + 1);
-  }
+  const totalPages = useMemo(() => {
+    return Array.from({ length: pages }, (_, i) => i + 1);
+  }, [pages]);
 
   return (
     <>
